@@ -4,7 +4,7 @@ An interactive visualization of how a neuron generates an action potential.
 
 ## Preview
 
-![Action Potential Simulator](screenshot.png)
+![Action Potential Simulator](Screenshot.png)
 
 ## 🧠 About
 
