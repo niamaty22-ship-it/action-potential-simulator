@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Action Potential Simulator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <h1>Fire the Neuron ⚡</h1>
+
+        <p class="subtitle">
+            Explore how a neuron generates an action potential.
+        </p>
+
+
+        <!-- =========================
+             SIMULATION AREA
+             ========================= -->
+
+        <div class="simulation-area">
+
+
+            <!-- =========================
+                 NEURON
+                 ========================= -->
+
+            <section class="neuron-container">
+
+                <h2>Neuron Activity</h2>
+
+                <svg
+                    class="neuron"
+                    viewBox="0 0 600 300"
+                    xmlns="http://www.w3.org/2000/svg">
+
+                    <!-- Dendrites -->
+
+                    <path
+                        d="M180 150 C130 100, 100 80, 50 60"
+                        class="neuron-part"
+                    />
+
+                    <path
+                        d="M180 150 C130 120, 100 130, 50 120"
+                        class="neuron-part"
+                    />
+
+                    <path
+                        d="M180 150 C130 180, 100 200, 50 230"
+                        class="neuron-part"
+                    />
+
+
+                    <!-- Soma -->
+
+                    <circle
+                        cx="200"
+                        cy="150"
+                        r="45"
+                        class="soma"
+                    />
+
+
+                    <!-- Axon -->
+
+                    <line
+                        x1="245"
+                        y1="150"
+                        x2="520"
+                        y2="150"
+                        class="axon"
+                    />
+
+                    <circle
+                        cx="245"
+                        cy="150"
+                        r="8"
+                        class="signal"
+                    />
+
+
+                    <!-- Axon terminals -->
+
+                    <path
+                        d="M520 150 C545 120, 560 110, 580 100"
+                        class="neuron-part"
+                    />
+
+                    <path
+                        d="M520 150 C545 150, 560 150, 585 150"
+                        class="neuron-part"
+                    />
+
+                    <path
+                        d="M520 150 C545 180, 560 190, 580 200"
+                        class="neuron-part"
+                    />
+
+                </svg>
+
+            </section>
+
+
+            <!-- =========================
+                 GRAPH
+                 ========================= -->
+
+            <section class="graph-section">
+
+                <h2>Membrane Potential</h2>
+
+                <div class="graph-wrapper">
+
+                    <canvas
+                        id="actionPotentialGraph"
+                        width="600"
+                        height="300">
+                    </canvas>
+
+                    <div id="graphSignal"></div>
+
+                </div>
+
+                <p class="graph-label">
+                    Time →
+                </p>
+
+            </section>
+
+        </div>
+
+
+        <!-- =========================
+             SIMULATION INFORMATION
+             ========================= -->
+
+        <section class="phase-info">
+
+            <p id="phaseLabel">
+                Resting Potential
+            </p>
+
+            <p id="phaseDescription">
+                The neuron is ready to fire.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             FIRE BUTTON
+             ========================= -->
+
+        <button id="fireButton">
+            Fire Neuron
+        </button>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

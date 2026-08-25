@@ -1,0 +1,392 @@
+/* =========================
+   GENERAL PAGE
+   ========================= */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #071c13;
+    color: white;
+}
+
+.app {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 20px;
+
+    box-sizing: border-box;
+    padding: 40px 20px;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 0;
+}
+
+.subtitle {
+    color: #a8c7b5;
+}
+
+
+/* =========================
+   SIMULATION LAYOUT
+   ========================= */
+
+.simulation-area {
+    width: 100%;
+    max-width: 1240px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+
+/* =========================
+   NEURON AREA
+   ========================= */
+
+.neuron-container {
+    width: 600px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 1 600px;
+    min-width: 0;
+}
+
+.neuron-container h2 {
+    margin: 0 0 10px 0;
+}
+
+.neuron {
+    width: 500px;
+    height: 250px;
+}
+
+
+/* =========================
+   NEURON PARTS
+   ========================= */
+
+.neuron-part,
+.axon {
+    fill: none;
+    stroke: #7ee2a8;
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.soma {
+    fill: #7ee2a8;
+}
+
+
+/* =========================
+   FIRING ANIMATION
+   ========================= */
+
+.neuron.fired .neuron-part,
+.neuron.fired .axon,
+.neuron.fired .soma {
+    filter:
+        drop-shadow(0 0 8px #7ee2a8)
+        drop-shadow(0 0 18px #7ee2a8)
+        drop-shadow(0 0 30px #7ee2a8);
+
+    transition: filter 0.2s ease;
+}
+
+
+/* =========================
+   ELECTRICAL SIGNAL
+   ========================= */
+
+.signal {
+    fill: white;
+    opacity: 0;
+}
+
+.neuron.fired .signal {
+    opacity: 1;
+    animation: travel 2.8s linear;
+}
+
+@keyframes travel {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(275px);
+    }
+}
+
+
+/* =========================
+   GRAPH AREA
+   ========================= */
+
+.graph-section {
+    width: 600px;
+    text-align: center;
+    margin-top: 20px;
+
+    flex: 0 1 600px;
+    min-width: 0;
+}
+
+.graph-section h2 {
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   GRAPH WRAPPER
+   ========================= */
+
+.graph-wrapper {
+    position: relative;
+    width: 600px;
+    height: 300px;
+}
+
+
+/* =========================
+   ACTION POTENTIAL GRAPH
+   ========================= */
+
+#actionPotentialGraph {
+    width: 600px;
+    height: 300px;
+
+    background: #0b281c;
+
+    border-radius: 16px;
+    border: 1px solid #24553d;
+}
+
+
+/* =========================
+   GRAPH SIGNAL
+   ========================= */
+
+#graphSignal {
+    position: absolute;
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 8px #7ee2a8,
+        0 0 18px #7ee2a8;
+
+    pointer-events: none;
+
+    opacity: 0;
+}
+
+
+/* =========================
+   GRAPH LABEL
+   ========================= */
+
+.graph-label {
+    color: #a8c7b5;
+    margin-top: 8px;
+}
+
+
+/* =========================
+   SIMULATION PHASE INFO
+   ========================= */
+
+.phase-info {
+    width: 100%;
+    max-width: 800px;
+
+    text-align: center;
+
+    margin-top: 5px;
+}
+
+
+/* =========================
+   PHASE LABEL
+   ========================= */
+
+#phaseLabel {
+    display: inline-block;
+
+    margin: 0;
+
+    padding: 10px 24px;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    color: #7ee2a8;
+
+    background: #0b281c;
+
+    border: 1px solid #24553d;
+
+    border-radius: 999px;
+
+    box-shadow:
+        0 0 10px rgba(126, 226, 168, 0.08);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* =========================
+   PHASE DESCRIPTION
+   ========================= */
+
+#phaseDescription {
+    max-width: 600px;
+
+    margin: 10px auto 0;
+
+    color: #a8c7b5;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    min-height: 24px;
+
+    transition:
+        opacity 0.2s ease;
+}
+
+/* =========================
+   BUTTON
+   ========================= */
+
+button {
+    padding: 14px 28px;
+
+    border: none;
+    border-radius: 12px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    background: #7ee2a8;
+    color: #071c13;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+#fireButton {
+    margin-top: 5px;
+}
+
+
+/* =========================
+   TABLET / SMALL LAPTOP
+   ========================= */
+
+@media (max-width: 1100px) {
+
+    .simulation-area {
+        width: 100%;
+
+        flex-direction: column;
+        align-items: center;
+
+        gap: 30px;
+    }
+
+    .neuron-container,
+    .graph-section {
+        width: 600px;
+        max-width: 100%;
+    }
+
+    .neuron {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .graph-wrapper {
+        max-width: 100%;
+    }
+
+    #actionPotentialGraph {
+        max-width: 100%;
+    }
+}
+
+
+/* =========================
+   PHONE
+   ========================= */
+
+@media (max-width: 650px) {
+
+    .app {
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .subtitle {
+        text-align: center;
+    }
+
+    .simulation-area {
+        width: 100%;
+        gap: 20px;
+    }
+
+    .neuron-container,
+    .graph-section {
+        width: 100%;
+        flex: none;
+    }
+
+    .neuron {
+        width: 100%;
+        height: auto;
+    }
+
+    .graph-wrapper {
+        width: 100%;
+        height: auto;
+    }
+
+    #actionPotentialGraph {
+        width: 100%;
+        height: auto;
+    }
+}
