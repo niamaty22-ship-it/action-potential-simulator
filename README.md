@@ -2,6 +2,10 @@
 
 An interactive visualization of how a neuron generates an action potential.
 
+## Preview
+
+![Action Potential Simulator](screenshot.png)
+
 ## 🧠 About
 
 This project turns the biology of an action potential into an interactive
