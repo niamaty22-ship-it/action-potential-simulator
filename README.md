@@ -32,6 +32,9 @@ neuron while the membrane potential changes simultaneously on the graph.
 - SVG
 - HTML Canvas
 
+## Live Demo
+
+[Try the Action Potential Simulator]https://niamaty22-ship-it.github.io/action-potential-simulator/
 ## 🎯 Why I Built This
 
 I wanted to explore how neuroscience concepts could be transformed from
